@@ -29,6 +29,7 @@ jobs:
       PROXY_NETWORK: ${{ vars.PROXY_NETWORK || 'proxy' }}
       COMPOSE_PROJECT_NAME: ${{ vars.COMPOSE_PROJECT_NAME || 'eqlsquare-landing' }}
       NGINX_DEPLOY_PATH: ${{ vars.NGINX_DEPLOY_PATH || '/opt/eqlsquare/payslip/nginx' }}
+      NGINX_CONTAINER_NAME: ${{ vars.NGINX_CONTAINER_NAME || 'payroll-nginx' }}
 
     steps:
       - name: Check deployment settings
@@ -80,7 +81,7 @@ jobs:
         run: |
           set -euo pipefail
           ssh -p "$PROD_SSH_PORT" -i ~/.ssh/deploy_key -o BatchMode=yes -o IdentitiesOnly=yes "$PROD_SSH_USER@$PROD_SSH_HOST" \
-            "APP_DIR='$PROD_DEPLOY_PATH' APP_PORT='$APP_PORT' PROXY_NETWORK='$PROXY_NETWORK' COMPOSE_PROJECT_NAME='$COMPOSE_PROJECT_NAME' NGINX_DIR='$NGINX_DEPLOY_PATH' GITHUB_SHA='$GITHUB_SHA' bash -s" <<'REMOTE'
+            "APP_DIR='$PROD_DEPLOY_PATH' APP_PORT='$APP_PORT' PROXY_NETWORK='$PROXY_NETWORK' COMPOSE_PROJECT_NAME='$COMPOSE_PROJECT_NAME' NGINX_DIR='$NGINX_DEPLOY_PATH' NGINX_CONTAINER_NAME='$NGINX_CONTAINER_NAME' GITHUB_SHA='$GITHUB_SHA' bash -s" <<'REMOTE'
           set -euo pipefail
 
           case "$APP_DIR" in
@@ -123,7 +124,16 @@ jobs:
           fi
 
           cd "$NGINX_DIR"
-          docker compose exec -T nginx nginx -t
-          docker compose restart nginx
+          if docker compose ps nginx --status running -q | grep -q .; then
+            docker compose exec -T nginx nginx -t
+            docker compose restart nginx
+          elif docker ps --format '{{.Names}}' | grep -qx "$NGINX_CONTAINER_NAME"; then
+            docker exec "$NGINX_CONTAINER_NAME" nginx -t
+            docker restart "$NGINX_CONTAINER_NAME"
+          else
+            echo "Shared Nginx container is not running"
+            docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
+            exit 1
+          fi
           curl -fsS "http://127.0.0.1:${APP_PORT}/healthz"
           REMOTE
