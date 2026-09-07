@@ -57,6 +57,8 @@ jobs:
           printf '%s\n' "$PROD_SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p "$PROD_SSH_PORT" -H "$PROD_SSH_HOST" >> ~/.ssh/known_hosts
+          echo "Deploy key fingerprint:"
+          ssh-keygen -y -f ~/.ssh/deploy_key | ssh-keygen -lf -
 
       - name: Package source
         run: |
@@ -70,14 +72,14 @@ jobs:
       - name: Upload source
         run: |
           set -euo pipefail
-          scp -P "$PROD_SSH_PORT" -i ~/.ssh/deploy_key \
+          scp -P "$PROD_SSH_PORT" -i ~/.ssh/deploy_key -o BatchMode=yes -o IdentitiesOnly=yes \
             /tmp/eqlsquare-landing.tar.gz \
             "$PROD_SSH_USER@$PROD_SSH_HOST:/tmp/eqlsquare-landing.tar.gz"
 
       - name: Deploy containers
         run: |
           set -euo pipefail
-          ssh -p "$PROD_SSH_PORT" -i ~/.ssh/deploy_key "$PROD_SSH_USER@$PROD_SSH_HOST" \
+          ssh -p "$PROD_SSH_PORT" -i ~/.ssh/deploy_key -o BatchMode=yes -o IdentitiesOnly=yes "$PROD_SSH_USER@$PROD_SSH_HOST" \
             "APP_DIR='$PROD_DEPLOY_PATH' APP_PORT='$APP_PORT' PROXY_NETWORK='$PROXY_NETWORK' COMPOSE_PROJECT_NAME='$COMPOSE_PROJECT_NAME' NGINX_DIR='$NGINX_DEPLOY_PATH' GITHUB_SHA='$GITHUB_SHA' bash -s" <<'REMOTE'
           set -euo pipefail
 
