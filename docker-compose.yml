@@ -1,0 +1,8 @@
+services:
+  landing:
+    build: .
+    image: eqlsquare-landing:local
+    container_name: eqlsquare-landing-local
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8083:80"

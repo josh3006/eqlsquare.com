@@ -1,0 +1,127 @@
+name: Deploy Landing Page
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-eqlsquare-landing
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to VM
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      PROD_SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+      PROD_SSH_USER: ${{ secrets.PROD_SSH_USER }}
+      PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+      PROD_DEPLOY_PATH: ${{ secrets.PROD_DEPLOY_PATH }}
+      PROD_SSH_PORT: ${{ vars.PROD_SSH_PORT || '22' }}
+      APP_PORT: ${{ vars.APP_PORT || '8083' }}
+      PROXY_NETWORK: ${{ vars.PROXY_NETWORK || 'proxy' }}
+      COMPOSE_PROJECT_NAME: ${{ vars.COMPOSE_PROJECT_NAME || 'eqlsquare-landing' }}
+      NGINX_DEPLOY_PATH: ${{ vars.NGINX_DEPLOY_PATH || '/opt/eqlsquare/payslip/nginx' }}
+
+    steps:
+      - name: Check deployment settings
+        run: |
+          set -euo pipefail
+          missing=0
+          for name in PROD_SSH_HOST PROD_SSH_USER PROD_SSH_PRIVATE_KEY PROD_DEPLOY_PATH; do
+            if [ -z "${!name:-}" ]; then
+              echo "::warning::${name} is not configured"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "::error::Deployment secrets are missing"
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare SSH
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$PROD_SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$PROD_SSH_PORT" -H "$PROD_SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Package source
+        run: |
+          set -euo pipefail
+          tar \
+            --exclude='.git' \
+            --exclude='.env' \
+            --exclude='node_modules' \
+            -czf /tmp/eqlsquare-landing.tar.gz .
+
+      - name: Upload source
+        run: |
+          set -euo pipefail
+          scp -P "$PROD_SSH_PORT" -i ~/.ssh/deploy_key \
+            /tmp/eqlsquare-landing.tar.gz \
+            "$PROD_SSH_USER@$PROD_SSH_HOST:/tmp/eqlsquare-landing.tar.gz"
+
+      - name: Deploy containers
+        run: |
+          set -euo pipefail
+          ssh -p "$PROD_SSH_PORT" -i ~/.ssh/deploy_key "$PROD_SSH_USER@$PROD_SSH_HOST" \
+            "APP_DIR='$PROD_DEPLOY_PATH' APP_PORT='$APP_PORT' PROXY_NETWORK='$PROXY_NETWORK' COMPOSE_PROJECT_NAME='$COMPOSE_PROJECT_NAME' NGINX_DIR='$NGINX_DEPLOY_PATH' GITHUB_SHA='$GITHUB_SHA' bash -s" <<'REMOTE'
+          set -euo pipefail
+
+          case "$APP_DIR" in
+            /opt/eqlsquare/*) ;;
+            *)
+              echo "Refusing deploy path outside /opt/eqlsquare: $APP_DIR"
+              exit 1
+              ;;
+          esac
+
+          IMAGE="local/eqlsquare-landing:${GITHUB_SHA}"
+
+          mkdir -p "$APP_DIR"
+          find "$APP_DIR" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+          tar -xzf /tmp/eqlsquare-landing.tar.gz -C "$APP_DIR"
+          rm -f /tmp/eqlsquare-landing.tar.gz
+
+          cd "$APP_DIR"
+          docker network inspect "$PROXY_NETWORK" >/dev/null 2>&1 || docker network create "$PROXY_NETWORK" >/dev/null
+          docker build -t "$IMAGE" .
+
+          {
+            printf 'APP_IMAGE=%s\n' "$IMAGE"
+            printf 'APP_PORT=%s\n' "$APP_PORT"
+            printf 'PROXY_NETWORK=%s\n' "$PROXY_NETWORK"
+            printf 'COMPOSE_PROJECT_NAME=%s\n' "$COMPOSE_PROJECT_NAME"
+          } > .env
+
+          docker rm -f eqlsquare.com eqlsquare-landing-local >/dev/null 2>&1 || true
+          COMPOSE_PROJECT_NAME="$COMPOSE_PROJECT_NAME" docker compose -f deploy/docker-compose.prod.yml up -d
+
+          mkdir -p "$NGINX_DIR/templates" "$NGINX_DIR/conf.d"
+          cp deploy/nginx/templates/eqlsquare.http.conf "$NGINX_DIR/templates/eqlsquare.http.conf"
+          cp deploy/nginx/templates/eqlsquare.https.conf "$NGINX_DIR/templates/eqlsquare.https.conf"
+
+          if [ -f "$NGINX_DIR/certbot/conf/live/eqlsquare.com/fullchain.pem" ] && [ -f "$NGINX_DIR/certbot/conf/live/eqlsquare.com/privkey.pem" ]; then
+            cp "$NGINX_DIR/templates/eqlsquare.https.conf" "$NGINX_DIR/conf.d/eqlsquare.conf"
+          else
+            cp "$NGINX_DIR/templates/eqlsquare.http.conf" "$NGINX_DIR/conf.d/eqlsquare.conf"
+          fi
+
+          cd "$NGINX_DIR"
+          docker compose exec -T nginx nginx -t
+          docker compose restart nginx
+          curl -fsS "http://127.0.0.1:${APP_PORT}/healthz"
+          REMOTE
