@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#5a49ff">
+  <title>Trick Mind</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <!-- Home -->
+  <section class="screen" id="home" hidden>
+    <div class="home-inner">
+      <div class="logo" aria-hidden="true">
+        <span class="logo-q">?</span>
+      </div>
+      <h1 class="title">Trick Mind</h1>
+      <p class="tagline">100 puzzles. Most of them are lying to you.</p>
+      <button class="big-btn" id="playBtn">Play</button>
+      <div class="home-row">
+        <button class="soft-btn" id="mapBtn">All levels</button>
+        <button class="soft-btn" id="homeShopBtn">Shop</button>
+      </div>
+      <p class="home-progress" id="homeProgress"></p>
+    </div>
+  </section>
+
+  <!-- Level map -->
+  <section class="screen" id="map" hidden>
+    <header class="map-bar">
+      <button class="icon-btn" id="mapBack" aria-label="Back to home">‹</button>
+      <h2>Levels</h2>
+      <button class="coins" data-coins aria-label="Coins, open shop"><span class="coin"></span><span class="coin-n">0</span><span class="plus">+</span></button>
+    </header>
+    <div class="map-list" id="mapList"></div>
+  </section>
+
+  <!-- Play -->
+  <section class="screen" id="play" hidden>
+    <header class="bar">
+      <button class="icon-btn" id="playBack" aria-label="Back to levels">‹</button>
+      <span class="level-pill" id="levelPill">Level 1</span>
+      <button class="icon-btn" id="muteBtn" aria-label="Sound on, tap to mute">🔊</button>
+      <button class="coins" data-coins aria-label="Coins, open shop"><span class="coin"></span><span class="coin-n">0</span><span class="plus">+</span></button>
+    </header>
+    <div class="play-area" id="playArea">
+      <div class="question" id="question"></div>
+      <div class="stage" id="stage">
+        <div class="world" id="world"></div>
+      </div>
+      <div class="answer" id="answer" hidden></div>
+    </div>
+    <footer class="dock">
+      <button class="btn-hint" id="hintBtn">💡 Hint</button>
+      <button class="btn-ad" id="adBtn">▶ Free coins <span class="tag">+20</span></button>
+    </footer>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div id="overlay"></div>
+
+  <script src="js/levels-data.js"></script>
+  <script src="js/levels-w1.js"></script>
+  <script src="js/levels-w2.js"></script>
+  <script src="js/levels-w3.js"></script>
+  <script src="js/levels-w4.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>

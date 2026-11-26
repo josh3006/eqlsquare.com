@@ -1,0 +1,1445 @@
+/* Generated from levels.json by tools/build_levels_md.py. Do not edit. */
+window.LEVEL_DATA = {
+ "version": 1,
+ "economy": {
+  "startCoins": 100,
+  "levelReward": 5,
+  "worldReward": 50,
+  "hintCosts": {
+   "nudge": 10,
+   "strong": 30,
+   "solution": 60
+  }
+ },
+ "worlds": [
+  {
+   "id": 1,
+   "name": "At Home",
+   "levels": "1-25"
+  },
+  {
+   "id": 2,
+   "name": "School Days",
+   "levels": "26-50"
+  },
+  {
+   "id": 3,
+   "name": "Detective Case",
+   "levels": "51-75"
+  },
+  {
+   "id": 4,
+   "name": "Lost in Space",
+   "levels": "76-100"
+  }
+ ],
+ "levels": [
+  {
+   "id": 1,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Tap the biggest number.",
+   "screen": "Three numbers: a giant 9, a medium 6 and a tiny 15.",
+   "solution": "Tap the tiny 15.",
+   "hints": [
+    "Bigger doesn't always mean taller.",
+    "Think about value, not size."
+   ],
+   "why": "15 is the biggest number even though it is drawn the smallest."
+  },
+  {
+   "id": 2,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "drag + tap",
+   "question": "Turn on the light.",
+   "screen": "A dark room, a light switch on the wall, and a lamp with its plug lying on the floor next to the socket.",
+   "solution": "Drag the plug into the socket, then tap the switch.",
+   "hints": [
+    "The switch works fine. Something else is missing.",
+    "Check the floor near the wall."
+   ],
+   "why": "A lamp needs power before the switch can do anything."
+  },
+  {
+   "id": 3,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "drag",
+   "question": "Help the cat get some sleep.",
+   "screen": "A cat on a bed, squinting. Bright sunlight comes through an open window with curtains pulled to the side.",
+   "solution": "Drag the curtains closed.",
+   "hints": [
+    "Why can't the cat sleep?",
+    "The sun is too bright. Block it."
+   ],
+   "why": "Closing the curtains makes the room dark enough to sleep."
+  },
+  {
+   "id": 4,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "drag + type",
+   "question": "How many eggs are there?",
+   "screen": "An egg carton with the lid half closed. Six eggs are visible.",
+   "solution": "Drag the lid fully open and count 12 eggs. Type 12.",
+   "hints": [
+    "Are you seeing the whole carton?",
+    "Open the lid."
+   ],
+   "why": "The lid was hiding the second row of eggs."
+  },
+  {
+   "id": 5,
+   "world": 1,
+   "difficulty": "medium",
+   "mechanic": "device: shake",
+   "question": "Wake up Dad.",
+   "screen": "Dad snoring in bed. An alarm clock on the nightstand. Tapping the clock does nothing.",
+   "solution": "Shake the phone. The alarm clock rattles and rings, and Dad wakes up.",
+   "fallback": "Web: tap the alarm clock 5 times quickly.",
+   "hints": [
+    "The clock needs a bigger push than a tap.",
+    "Move your whole phone."
+   ],
+   "why": "Shaking the phone shakes the clock."
+  },
+  {
+   "id": 6,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "drag",
+   "question": "Find the TV remote.",
+   "screen": "A living room with a sofa, a coffee table, a plant and a TV.",
+   "solution": "Drag the sofa cushion aside. The remote is under it.",
+   "hints": [
+    "Where does everyone lose the remote?",
+    "Look under the sofa cushions."
+   ],
+   "why": "The remote is always in the sofa."
+  },
+  {
+   "id": 7,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "multi-step drag",
+   "question": "Make a cup of tea.",
+   "screen": "A kettle, an empty cup and a tea bag on the kitchen counter.",
+   "solution": "Drag the tea bag into the cup, tap the kettle to boil it, then drag the kettle over the cup to pour.",
+   "hints": [
+    "There are three steps.",
+    "Tea bag, then hot water."
+   ],
+   "why": "Tea needs a tea bag and boiling water, in that order."
+  },
+  {
+   "id": 8,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Tap the odd one out.",
+   "screen": "Four clocks showing 3:00, 6:00, 9:00 and 12:30.",
+   "solution": "Tap the clock showing 12:30.",
+   "hints": [
+    "Look at the minute hands.",
+    "Three clocks show an exact hour."
+   ],
+   "why": "Every clock is on the hour except 12:30."
+  },
+  {
+   "id": 9,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "drag text",
+   "question": "The baby is crying. Make it stop.",
+   "screen": "A crying baby in a crib. No toys or bottles anywhere.",
+   "solution": "Drag the letter 'o' from the word 'stop' in the question into the baby's mouth as a pacifier.",
+   "hints": [
+    "There's nothing in the room you can use.",
+    "The question itself can be touched."
+   ],
+   "why": "The round 'o' looks just like a pacifier."
+  },
+  {
+   "id": 10,
+   "world": 1,
+   "difficulty": "hard",
+   "mechanic": "drag",
+   "question": "Water the plant.",
+   "screen": "A droopy plant. An empty watering can and a sink with a broken tap. A rain cloud is visible through the window.",
+   "solution": "Drag the rain cloud from outside the window over the plant. It rains on the plant.",
+   "hints": [
+    "The tap and the can are useless.",
+    "Look outside."
+   ],
+   "why": "The cloud is a movable object, and clouds carry water."
+  },
+  {
+   "id": 11,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "How many legs can you see?",
+   "screen": "A dog sitting on a chair.",
+   "solution": "Type 8.",
+   "hints": [
+    "Don't only count the animal.",
+    "Furniture has legs too."
+   ],
+   "why": "The dog has 4 legs and the chair has 4 legs."
+  },
+  {
+   "id": 12,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "drag dial",
+   "question": "Dry the wet sock.",
+   "screen": "A dripping sock and a washing machine with a dial set to WASH.",
+   "solution": "Drag the sock into the machine and turn the dial to DRY.",
+   "hints": [
+    "The machine can do more than wash.",
+    "Turn the dial."
+   ],
+   "why": "Many washing machines can also dry clothes."
+  },
+  {
+   "id": 13,
+   "world": 1,
+   "difficulty": "medium",
+   "mechanic": "drag",
+   "question": "Catch the mouse.",
+   "screen": "A mouse running around the kitchen, too fast to tap. A mousetrap in the corner and a piece of cheese on the table.",
+   "solution": "Drag the cheese onto the trap. The mouse runs into it.",
+   "hints": [
+    "You can't catch it by hand.",
+    "Give the mouse a reason to go into the trap."
+   ],
+   "why": "Bait makes the mouse come to you."
+  },
+  {
+   "id": 14,
+   "world": 1,
+   "difficulty": "medium",
+   "mechanic": "pinch zoom",
+   "question": "Who ate the cake?",
+   "screen": "A boy, a dog and Grandma sitting around an empty cake plate. Everyone looks innocent.",
+   "solution": "Pinch to zoom in on Grandma's lap. It's covered in cake crumbs. Tap Grandma.",
+   "hints": [
+    "Look closer. Much closer.",
+    "Zoom in on each person."
+   ],
+   "why": "The crumbs give her away."
+  },
+  {
+   "id": 15,
+   "world": 1,
+   "difficulty": "hard",
+   "mechanic": "device: rotate",
+   "question": "Get the cookie jar from the top shelf.",
+   "screen": "A cookie jar on a very high shelf. A short kid and a chair that is too low.",
+   "solution": "Turn the phone upside down. The jar slides off the shelf and the kid catches it.",
+   "fallback": "Web: tap the two screws on the shelf to loosen them and the jar slides down.",
+   "hints": [
+    "The kid will never reach it.",
+    "What if the room were upside down?"
+   ],
+   "why": "Turning the phone turns the room, so the jar falls."
+  },
+  {
+   "id": 16,
+   "world": 1,
+   "difficulty": "medium",
+   "mechanic": "tap",
+   "question": "Turn off all the lights.",
+   "screen": "A room with 4 glowing lamps and a phone lying on the table with its screen lit.",
+   "solution": "Tap all 4 lamps, then tap the glowing phone on the table.",
+   "hints": [
+    "The room still isn't dark after the lamps are off.",
+    "Anything that glows counts."
+   ],
+   "why": "A phone screen is also a light."
+  },
+  {
+   "id": 17,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "choose",
+   "question": "Which is heavier: 1 kg of feathers or 1 kg of iron?",
+   "screen": "Buttons: Feathers / Iron / Same.",
+   "solution": "Tap 'Same'.",
+   "hints": [
+    "Read the question slowly.",
+    "Look at the weights."
+   ],
+   "why": "Both weigh exactly 1 kg."
+  },
+  {
+   "id": 18,
+   "world": 1,
+   "difficulty": "medium",
+   "mechanic": "swipe",
+   "question": "Feed the fish.",
+   "screen": "A hungry fish in a tank and a box of fish food above it. Tapping the box does nothing.",
+   "solution": "Drag the box over the tank and swipe it left and right quickly to sprinkle the food.",
+   "hints": [
+    "How do you get food out of a shaker?",
+    "Shake it from side to side."
+   ],
+   "why": "Fish food comes out when you shake the box."
+  },
+  {
+   "id": 19,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "drag",
+   "question": "Put all 5 toys away.",
+   "screen": "A toy box. A ball, a car, blocks and a doll are on the floor. A teddy bear's ear pokes out from behind the curtain.",
+   "solution": "Drag the 4 visible toys into the box, then drag the curtain aside and put the teddy bear in.",
+   "hints": [
+    "You can only see 4 toys.",
+    "Something is hiding behind the curtain."
+   ],
+   "why": "The fifth toy was hidden."
+  },
+  {
+   "id": 20,
+   "world": 1,
+   "difficulty": "hard",
+   "mechanic": "device: volume",
+   "question": "The dog is barking too loudly. Make it quiet.",
+   "screen": "A barking dog with sound waves. Petting it and giving it a bone don't work.",
+   "solution": "Press the phone's volume-down button until it's muted.",
+   "fallback": "Web: tap the speaker icon in the game's top bar.",
+   "hints": [
+    "You can't calm the dog.",
+    "Control the sound, not the dog."
+   ],
+   "why": "Muting your phone silences the dog."
+  },
+  {
+   "id": 21,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "How many holes does this T-shirt have?",
+   "screen": "A plain T-shirt lying flat.",
+   "solution": "Type 4.",
+   "hints": [
+    "Think about where your body goes in.",
+    "Head, arms and body."
+   ],
+   "why": "One for the neck, two for the arms, one at the bottom."
+  },
+  {
+   "id": 22,
+   "world": 1,
+   "difficulty": "medium",
+   "mechanic": "tap to set",
+   "question": "Fix the clock.",
+   "screen": "A wall clock showing the wrong time, with '+1 hour' and '+5 min' buttons.",
+   "solution": "Use the buttons to set the clock to the real time on your phone (within 5 minutes).",
+   "hints": [
+    "What time is it right now?",
+    "Check the time on your phone."
+   ],
+   "why": "A fixed clock shows the real time."
+  },
+  {
+   "id": 23,
+   "world": 1,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Help Mom find her glasses.",
+   "screen": "Mom searching a messy room. The glasses are pushed up on top of her head.",
+   "solution": "Tap the top of Mom's head.",
+   "hints": [
+    "They're closer than she thinks.",
+    "Look at Mom herself."
+   ],
+   "why": "The glasses were on her head all along."
+  },
+  {
+   "id": 24,
+   "world": 1,
+   "difficulty": "medium",
+   "mechanic": "multi-step drag",
+   "question": "Bake the cake. The guests arrive in 5 seconds!",
+   "screen": "A bowl of batter, an oven with a dial, and a kitchen timer showing 60:00.",
+   "solution": "Drag the batter into the oven, turn the dial on, then spin the timer down to 0:00.",
+   "hints": [
+    "You don't have time to wait an hour.",
+    "The timer can be moved."
+   ],
+   "why": "Spinning the timer skips the wait."
+  },
+  {
+   "id": 25,
+   "world": 1,
+   "difficulty": "hard",
+   "mechanic": "multi-step finale",
+   "question": "Get out of the house! The door is locked.",
+   "screen": "A locked front door, a rug, a wall clock and a drawer.",
+   "solution": "1) Tap the clock. A drawer pops open with a note saying 'Under your feet'. 2) Drag the rug aside to find a giant key. 3) Pinch or double-tap the key to shrink it. 4) Drag the key to the door.",
+   "hints": [
+    "Start with something that ticks.",
+    "The note talks about the floor. The key is too big: pinch it (or double-tap it) to make it smaller."
+   ],
+   "why": "World finale: it combines tapping, dragging and pinching."
+  },
+  {
+   "id": 26,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Make this true: 1 + 1 = 3",
+   "screen": "The equation 1 + 1 = 3 on a blackboard.",
+   "solution": "Tap the '=' sign. It changes to '≠'.",
+   "hints": [
+    "You can't change the numbers.",
+    "Try changing a symbol."
+   ],
+   "why": "1 + 1 ≠ 3 is a true statement."
+  },
+  {
+   "id": 27,
+   "world": 2,
+   "difficulty": "medium",
+   "mechanic": "type x3",
+   "question": "What is half of 8? Find 3 answers.",
+   "screen": "A big number 8 and three empty answer boxes.",
+   "solution": "Type 4, 0 and 3.",
+   "hints": [
+    "One answer is maths. The others are about shape.",
+    "Cut the 8 across the middle, then down the middle."
+   ],
+   "why": "8 ÷ 2 = 4. The top half of an 8 looks like 0, and the right half looks like 3."
+  },
+  {
+   "id": 28,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "How many triangles?",
+   "screen": "A big triangle divided into 4 small triangles (3 in the corners and 1 upside down in the middle).",
+   "solution": "Type 5.",
+   "hints": [
+    "It's more than 4.",
+    "The outside shape counts too."
+   ],
+   "why": "4 small triangles plus the big one."
+  },
+  {
+   "id": 29,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "What has keys but can't open locks?",
+   "screen": "A classroom with a piano in the corner.",
+   "solution": "Type 'piano' (also accept 'keyboard').",
+   "hints": [
+    "It's in this room.",
+    "It makes music."
+   ],
+   "why": "A piano has keys, but not the kind for doors."
+  },
+  {
+   "id": 30,
+   "world": 2,
+   "difficulty": "hard",
+   "mechanic": "type",
+   "question": "9 + 9 = ?",
+   "screen": "Teacher at the blackboard. Typing 18 makes the teacher shake their head. A round wall clock hangs above the board.",
+   "solution": "Type 6.",
+   "hints": [
+    "The teacher wants a different kind of maths. Look around the room.",
+    "Count 9 hours forward from 9 o'clock on the clock."
+   ],
+   "why": "On a clock, 9 hours after 9 o'clock is 6 o'clock."
+  },
+  {
+   "id": 31,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "draw",
+   "question": "Cut the cake into 4 equal pieces.",
+   "screen": "A round cake viewed from above and a knife icon.",
+   "solution": "Swipe one line straight across, then a second line across it to make a cross.",
+   "hints": [
+    "One cut isn't enough.",
+    "Make a plus sign."
+   ],
+   "why": "Two cuts through the middle make 4 equal pieces."
+  },
+  {
+   "id": 32,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Tap the student who isn't paying attention.",
+   "screen": "Five students reading. One is holding their book upside down.",
+   "solution": "Tap the student with the upside-down book.",
+   "hints": [
+    "Everyone seems to be reading.",
+    "Check how the books are held."
+   ],
+   "why": "Nobody can really read a book upside down."
+  },
+  {
+   "id": 33,
+   "world": 2,
+   "difficulty": "medium",
+   "mechanic": "drag matchstick",
+   "question": "Move ONE matchstick to fix the equation: 6 + 4 = 4",
+   "screen": "The equation made of matchsticks.",
+   "solution": "Move the middle matchstick of the 6 into the empty gap to make a 0. Now it reads 0 + 4 = 4.",
+   "hints": [
+    "Change the first number.",
+    "A 6 is one matchstick away from a 0."
+   ],
+   "why": "0 + 4 = 4."
+  },
+  {
+   "id": 34,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "What comes next? 1, 2, 4, 8, ...",
+   "screen": "The number sequence on the board.",
+   "solution": "Type 16.",
+   "hints": [
+    "How does each number get bigger?",
+    "Each number doubles."
+   ],
+   "why": "8 × 2 = 16."
+  },
+  {
+   "id": 35,
+   "world": 2,
+   "difficulty": "hard",
+   "mechanic": "type",
+   "question": "What comes next? 1, 11, 21, 1211, ...",
+   "screen": "The sequence on the board.",
+   "solution": "Type 111221.",
+   "hints": [
+    "Don't do maths. Read each number out loud.",
+    "1 is 'one 1' → 11. 11 is 'two 1s' → 21."
+   ],
+   "why": "1211 is one 1, one 2, two 1s → 111221."
+  },
+  {
+   "id": 36,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "pinch zoom",
+   "question": "Help Sam copy the homework from the board.",
+   "screen": "A student at the back of a big classroom. The writing on the board is a tiny blur.",
+   "solution": "Pinch to zoom in on the board.",
+   "hints": [
+    "The board is too far away.",
+    "Make it bigger with two fingers."
+   ],
+   "why": "Zooming in makes the board readable."
+  },
+  {
+   "id": 37,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "drag",
+   "question": "Which pencil is the longest?",
+   "screen": "Three pencils with arrow-shaped ends that make them look different lengths.",
+   "solution": "Drag the pencils next to each other. They're the same length. Tap 'Same'.",
+   "hints": [
+    "Don't trust your eyes.",
+    "Line them up to compare."
+   ],
+   "why": "An optical illusion. The arrow ends trick your brain."
+  },
+  {
+   "id": 38,
+   "world": 2,
+   "difficulty": "medium",
+   "mechanic": "drag tiles",
+   "question": "Make 100 using four 9s.",
+   "screen": "Four '9' tiles and +, −, ×, ÷ tiles.",
+   "solution": "99 + 9 ÷ 9 = 100.",
+   "hints": [
+    "Two 9s can stick together.",
+    "Start with 99. You need 1 more."
+   ],
+   "why": "99 + (9 ÷ 9) = 99 + 1 = 100."
+  },
+  {
+   "id": 39,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "multi-step drag",
+   "question": "Ring the school bell.",
+   "screen": "A bell high on the wall with a rope too high to reach. A closed cleaning cupboard.",
+   "solution": "Tap the cupboard to open it, drag the ladder under the bell, then tap the rope.",
+   "hints": [
+    "You need to be taller.",
+    "Check the cupboard."
+   ],
+   "why": "The ladder was stored in the cupboard."
+  },
+  {
+   "id": 40,
+   "world": 2,
+   "difficulty": "hard",
+   "mechanic": "pinch zoom + type",
+   "question": "Pass the exam!",
+   "screen": "An exam paper with a tiny line of text and an answer box. A name plate on the desk says 'LEO'.",
+   "solution": "Zoom in on the paper. The question says 'What is your name?' Type LEO.",
+   "hints": [
+    "You have to read the question first.",
+    "Zoom in, then look at the desk."
+   ],
+   "why": "The easiest exam ever, once you can read it."
+  },
+  {
+   "id": 41,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "How many months have 28 days?",
+   "screen": "A calendar on the wall.",
+   "solution": "Type 12.",
+   "hints": [
+    "It's not only February.",
+    "Does January have a 28th day?"
+   ],
+   "why": "Every month has at least 28 days."
+  },
+  {
+   "id": 42,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Tap the shape with the most sides.",
+   "screen": "A triangle, a square, a hexagon and a 5-point star.",
+   "solution": "Tap the star.",
+   "hints": [
+    "The hexagon is not the answer.",
+    "Count the edges around the star."
+   ],
+   "why": "A 5-point star has 10 sides."
+  },
+  {
+   "id": 43,
+   "world": 2,
+   "difficulty": "medium",
+   "mechanic": "tap pour",
+   "question": "Get exactly 4 litres of water.",
+   "screen": "A 3-litre jug and a 5-litre jug, each with Fill and Empty buttons. Drag one jug onto the other to pour.",
+   "solution": "Fill the 5. Pour into the 3 (leaves 2). Empty the 3. Pour the 2 into the 3. Fill the 5. Pour into the 3 until full (1 goes in). 4 litres are left in the 5.",
+   "hints": [
+    "Start by filling the 5-litre jug.",
+    "Try to get 2 litres into the small jug first."
+   ],
+   "why": "A classic jug puzzle, solved by pouring back and forth."
+  },
+  {
+   "id": 44,
+   "world": 2,
+   "difficulty": "medium",
+   "mechanic": "device: microphone",
+   "question": "Wake up the sleeping student.",
+   "screen": "A student asleep on their desk with a feather on the desk next to their nose.",
+   "solution": "Blow into the microphone. The feather tickles their nose and they sneeze awake.",
+   "fallback": "Web: drag the feather back and forth under their nose.",
+   "hints": [
+    "Use the feather.",
+    "Use your breath."
+   ],
+   "why": "The microphone hears you blowing."
+  },
+  {
+   "id": 45,
+   "world": 2,
+   "difficulty": "hard",
+   "mechanic": "type",
+   "question": "What is the answer?",
+   "screen": "An empty blackboard and an answer box. Nothing else.",
+   "solution": "Type 45, which is the level number shown at the top of the screen.",
+   "hints": [
+    "The answer is already on your screen.",
+    "Look at the top of the screen."
+   ],
+   "why": "The only number on screen is the level number."
+  },
+  {
+   "id": 46,
+   "world": 2,
+   "difficulty": "medium",
+   "mechanic": "draw",
+   "question": "Add ONE line to make it true: 5 + 5 + 5 = 550",
+   "screen": "The equation on the board and a chalk tool.",
+   "solution": "Draw a small line on the first '+' to turn it into a 4: 545 + 5 = 550.",
+   "hints": [
+    "The line doesn't have to be straight across.",
+    "A '+' can become a number."
+   ],
+   "why": "545 + 5 = 550."
+  },
+  {
+   "id": 47,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "tap text",
+   "question": "Which word is always spelled WRONG?",
+   "screen": "An open dictionary with several words. An answer box.",
+   "solution": "Type 'wrong' (or tap the word WRONG in the question).",
+   "hints": [
+    "Read the question very literally.",
+    "The answer is in the question."
+   ],
+   "why": "The word 'wrong' is always spelled W-R-O-N-G."
+  },
+  {
+   "id": 48,
+   "world": 2,
+   "difficulty": "easy",
+   "mechanic": "choose",
+   "question": "How many sides does a circle have?",
+   "screen": "Buttons: 0 / 1 / 2 / Infinite.",
+   "solution": "Tap 2.",
+   "hints": [
+    "Think about where you can be compared to a circle.",
+    "Inside and ..."
+   ],
+   "why": "An inside and an outside."
+  },
+  {
+   "id": 49,
+   "world": 2,
+   "difficulty": "medium",
+   "mechanic": "drag sort",
+   "question": "Sort the books from shortest to tallest.",
+   "screen": "Four books standing up and one lying flat on its side.",
+   "solution": "Tap the flat book to stand it up. It's the tallest, so put it last.",
+   "hints": [
+    "One book isn't standing like the others.",
+    "Stand up the lying book first."
+   ],
+   "why": "You can't compare a book's height while it's lying down."
+  },
+  {
+   "id": 50,
+   "world": 2,
+   "difficulty": "hard",
+   "mechanic": "multi-step finale",
+   "question": "Escape from detention!",
+   "screen": "A classroom door with a 3-digit keypad, three coloured sticky notes (red, blue, green), a board, a clock and a window.",
+   "solution": "Red note: 'Board'. The board says ? × 2 = 14, so 7. Blue note: 'Clock'. The hour hand points to 3. Green note: 'Window'. There are 5 birds outside. Enter 7-3-5.",
+   "hints": [
+    "Each sticky note points to one digit.",
+    "Order: red, blue, green. Solve the board, read the clock, count the birds."
+   ],
+   "why": "World finale: maths, reading and observation together."
+  },
+  {
+   "id": 51,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "The thief ran through the muddy garden. Who is it?",
+   "screen": "Three suspects. Only one has muddy shoes.",
+   "solution": "Tap the suspect with muddy shoes.",
+   "hints": [
+    "Read the question again.",
+    "Look at their feet."
+   ],
+   "why": "The mud is the evidence."
+  },
+  {
+   "id": 52,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "drag",
+   "question": "Find the fingerprint.",
+   "screen": "A desk with a lamp, a book, a glass of water and a magnifying glass.",
+   "solution": "Drag the magnifying glass over the glass of water to reveal a fingerprint. Tap it.",
+   "hints": [
+    "Use the detective's tool.",
+    "Prints show up best on glass."
+   ],
+   "why": "Fingerprints stick to smooth surfaces like glass."
+  },
+  {
+   "id": 53,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "One suspect is lying. Who?",
+   "screen": "A: 'I was at the beach all day' (sunburned). B: 'I was baking' (flour on hands). C: 'I was reading in my room' (the room's light bulb is broken, and it was night).",
+   "solution": "Tap C.",
+   "hints": [
+    "Check each story against the picture.",
+    "Can you read in the dark?"
+   ],
+   "why": "C couldn't read at night with a broken bulb."
+  },
+  {
+   "id": 54,
+   "world": 3,
+   "difficulty": "medium",
+   "mechanic": "type",
+   "question": "Open the safe.",
+   "screen": "A safe with a 4-digit keypad. A calendar on the wall has April 12 circled with a heart.",
+   "solution": "Type 0412.",
+   "hints": [
+    "People often use special dates as codes.",
+    "Check the calendar."
+   ],
+   "why": "The owner used an anniversary as the code: month 04, day 12."
+  },
+  {
+   "id": 55,
+   "world": 3,
+   "difficulty": "hard",
+   "mechanic": "rotate + tap",
+   "question": "The witness drew the thief. Who is it?",
+   "screen": "A strange drawing and four suspects. The drawing doesn't look like anyone.",
+   "solution": "Tap the drawing to turn it the right way up. It's a face with a beard, which matches suspect 3. Tap them.",
+   "hints": [
+    "The drawing is correct. Maybe it's being held wrong.",
+    "Turn the drawing around."
+   ],
+   "why": "The witness handed it over upside down."
+  },
+  {
+   "id": 56,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Find the spare key.",
+   "screen": "A front door, a doormat, a flower pot and a lamp post.",
+   "solution": "Tap the flower pot to tip it over. The key is underneath.",
+   "hints": [
+    "It's not under the doormat. Too obvious!",
+    "Look under something heavy."
+   ],
+   "why": "Flower pots are a common hiding place for spare keys."
+  },
+  {
+   "id": 57,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "Decode the message: 3-1-20",
+   "screen": "A note with the numbers and a hint card: A = 1.",
+   "solution": "Type CAT.",
+   "hints": [
+    "Each number is a letter.",
+    "A=1, B=2, C=3 ..."
+   ],
+   "why": "3 = C, 1 = A, 20 = T."
+  },
+  {
+   "id": 58,
+   "world": 3,
+   "difficulty": "medium",
+   "mechanic": "drag + tap",
+   "question": "Read the secret message.",
+   "screen": "A blank sheet of paper, a desk lamp and a painting on the wall.",
+   "solution": "Drag the paper under the lamp. Heat reveals 'BEHIND THE PAINTING'. Tap the painting.",
+   "hints": [
+    "The ink is invisible.",
+    "Warm it up."
+   ],
+   "why": "Some invisible inks appear when heated."
+  },
+  {
+   "id": 59,
+   "world": 3,
+   "difficulty": "medium",
+   "mechanic": "tap",
+   "question": "Which footprint was made by this boot?",
+   "screen": "The bottom of a boot with a zigzag pattern on the left side. Three footprints, including one copy and one mirrored copy.",
+   "solution": "Tap the mirrored footprint.",
+   "hints": [
+    "A footprint is like a stamp.",
+    "Stamps print backwards."
+   ],
+   "why": "The print on the ground is a mirror image of the sole."
+  },
+  {
+   "id": 60,
+   "world": 3,
+   "difficulty": "hard",
+   "mechanic": "drag reveal",
+   "question": "Catch the thief in the dark.",
+   "screen": "A completely black screen.",
+   "solution": "Drag your finger around the screen to shine a torch. The thief's shoes are under the curtain. Tap them.",
+   "hints": [
+    "Your finger can be a torch.",
+    "Check under the curtains."
+   ],
+   "why": "Exploring the darkness reveals the hiding place."
+  },
+  {
+   "id": 61,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "What time did the robbery happen?",
+   "screen": "A broken wristwatch on the floor showing 9:40 with a cracked face.",
+   "solution": "Type 9:40.",
+   "hints": [
+    "Something broke during the struggle.",
+    "Read the watch."
+   ],
+   "why": "The watch stopped when it broke."
+  },
+  {
+   "id": 62,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "How many police officers are in the room?",
+   "screen": "Four officers in uniform and a man in a coat with a badge on his belt.",
+   "solution": "Type 5.",
+   "hints": [
+    "Not every officer wears a uniform.",
+    "Look for a badge."
+   ],
+   "why": "The man in the coat is a plain-clothes detective."
+  },
+  {
+   "id": 63,
+   "world": 3,
+   "difficulty": "medium",
+   "mechanic": "tap",
+   "question": "The thief just left. Which cup did they drink from?",
+   "screen": "Three coffee cups. One is still steaming.",
+   "solution": "Tap the steaming cup.",
+   "hints": [
+    "'Just left' is the key phrase.",
+    "Which drink is still hot?"
+   ],
+   "why": "The hot cup was used most recently."
+  },
+  {
+   "id": 64,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "swipe",
+   "question": "Check the door handle for prints.",
+   "screen": "A door handle and a powder brush.",
+   "solution": "Swipe the brush back and forth over the handle until the prints appear.",
+   "hints": [
+    "Use the brush.",
+    "Rub it over the handle."
+   ],
+   "why": "Detectives dust for prints with powder."
+  },
+  {
+   "id": 65,
+   "world": 3,
+   "difficulty": "hard",
+   "mechanic": "draw pattern",
+   "question": "Unlock the suspect's phone.",
+   "screen": "A phone with a 3×3 dot lock screen. Faint smudge marks on the screen.",
+   "solution": "Tilt or zoom to see the smudges, which make an 'L' shape. Draw an L: top-left, down to bottom-left, across to bottom-right.",
+   "hints": [
+    "Fingers leave marks.",
+    "Follow the smudges."
+   ],
+   "why": "Greasy finger trails reveal the pattern."
+  },
+  {
+   "id": 66,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "swipe pan",
+   "question": "Find the stolen bone.",
+   "screen": "A dog sniffing. Paw prints lead off the right edge of the screen.",
+   "solution": "Swipe the scene left to follow the paw prints. Tap the bone behind a tree.",
+   "hints": [
+    "The scene is bigger than your screen.",
+    "Follow the prints."
+   ],
+   "why": "The world keeps going beyond the screen."
+  },
+  {
+   "id": 67,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "The more you take, the more you leave behind. What are they?",
+   "screen": "A sandy path.",
+   "solution": "Type 'footsteps' (also accept 'steps' or 'footprints').",
+   "hints": [
+    "Look at the ground.",
+    "Walking leaves them."
+   ],
+   "why": "Every step you take leaves a footprint behind."
+  },
+  {
+   "id": 68,
+   "world": 3,
+   "difficulty": "medium",
+   "mechanic": "drag + type",
+   "question": "When will the thieves meet?",
+   "screen": "A note with backwards writing and a small hand mirror.",
+   "solution": "Drag the mirror next to the note. It reads 'MEET AT 9'. Type 9.",
+   "hints": [
+    "The writing is reversed.",
+    "Use the mirror."
+   ],
+   "why": "A mirror flips the writing back to normal."
+  },
+  {
+   "id": 69,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Who stole the diamond? It's the middle of summer.",
+   "screen": "Three suspects in T-shirts. One is wearing thick winter gloves.",
+   "solution": "Tap the suspect with gloves.",
+   "hints": [
+    "Why mention summer?",
+    "Who is dressed strangely?"
+   ],
+   "why": "Gloves in summer means hiding fingerprints."
+  },
+  {
+   "id": 70,
+   "world": 3,
+   "difficulty": "hard",
+   "mechanic": "tap order",
+   "question": "Find the secret room.",
+   "screen": "A bookshelf. Books have letters on their spines: P, E, X, O, N, R, A. A note says 'Say the magic word'.",
+   "solution": "Tap the books O, P, E, N in that order. The shelf swings open.",
+   "hints": [
+    "Which word opens things?",
+    "Spell O-P-E-N with the books."
+   ],
+   "why": "The 'magic word' to open a door is OPEN."
+  },
+  {
+   "id": 71,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "Triangle = 3, Square = 4, Pentagon = ?",
+   "screen": "The three shapes with the values.",
+   "solution": "Type 5.",
+   "hints": [
+    "Count something on each shape.",
+    "Count the sides."
+   ],
+   "why": "Each value is the number of sides."
+  },
+  {
+   "id": 72,
+   "world": 3,
+   "difficulty": "medium",
+   "mechanic": "tap",
+   "question": "The thief escaped by car 10 minutes ago. Which car was it?",
+   "screen": "Three parked cars on a snowy night. One has no snow on its bonnet.",
+   "solution": "Tap the car without snow on its bonnet.",
+   "hints": [
+    "What happens to a car's engine when it's driven?",
+    "A warm engine melts snow."
+   ],
+   "why": "Its hot engine melted the snow."
+  },
+  {
+   "id": 73,
+   "world": 3,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Take a clear photo of the suspect in the dark alley.",
+   "screen": "A camera viewfinder showing a dark alley. A flash icon (off) and a shutter button.",
+   "solution": "Tap the flash icon to turn it on, then tap the shutter.",
+   "hints": [
+    "It's too dark.",
+    "Turn on the flash."
+   ],
+   "why": "A flash lights up the scene."
+  },
+  {
+   "id": 74,
+   "world": 3,
+   "difficulty": "medium",
+   "mechanic": "tap",
+   "question": "Which word doesn't belong? LISTEN, SILENT, ENLIST, TINSEL, SALINE",
+   "screen": "Five word cards.",
+   "solution": "Tap SALINE.",
+   "hints": [
+    "Look at the letters, not the meanings.",
+    "Four words use exactly the same letters."
+   ],
+   "why": "LISTEN, SILENT, ENLIST and TINSEL are anagrams. SALINE has an 'A'."
+  },
+  {
+   "id": 75,
+   "world": 3,
+   "difficulty": "hard",
+   "mechanic": "multi-step finale",
+   "question": "Solve the case!",
+   "screen": "A crime scene with three hidden clues and three suspect cards.",
+   "solution": "1) Zoom on the floor: a size 42 shoe print. 2) Tap the window latch: a red thread. 3) Open the bin: a train ticket for 7:15. 4) Compare the suspect cards: only one wears size 42, owns a red scarf and has no alibi after 7:00. Drag them to 'ARREST'.",
+   "hints": [
+    "Find 3 clues before choosing.",
+    "Check the floor, the window and the bin."
+   ],
+   "why": "World finale: collect evidence, then deduce."
+  },
+  {
+   "id": 76,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "drag + tap",
+   "question": "Launch the rocket.",
+   "screen": "A big red LAUNCH button under a clear plastic cover.",
+   "solution": "Swipe the cover up, then tap the button.",
+   "hints": [
+    "Something protects the button.",
+    "Lift the cover."
+   ],
+   "why": "Real launch buttons have covers to stop accidents."
+  },
+  {
+   "id": 77,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "drag",
+   "question": "Help the astronaut drink water.",
+   "screen": "An astronaut and a floating bubble of water.",
+   "solution": "Drag the water bubble to the astronaut's mouth.",
+   "hints": [
+    "There's no cup in space.",
+    "The water is floating."
+   ],
+   "why": "In zero gravity, water floats in blobs."
+  },
+  {
+   "id": 78,
+   "world": 4,
+   "difficulty": "medium",
+   "mechanic": "drag",
+   "question": "Which planet is missing?",
+   "screen": "Planets in a row: Mercury, Venus, a big Moon, Mars, Jupiter, Saturn, Uranus, Neptune.",
+   "solution": "Drag the Moon aside. Earth is hiding behind it. Tap Earth.",
+   "hints": [
+    "Not everything in the row is a planet.",
+    "Something is blocking the view."
+   ],
+   "why": "The Moon was in front of Earth."
+  },
+  {
+   "id": 79,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "Make the astronaut float.",
+   "screen": "An astronaut stuck to the floor wearing big magnetic boots.",
+   "solution": "Tap the boots to take them off.",
+   "hints": [
+    "Why is she stuck?",
+    "Look at her feet."
+   ],
+   "why": "Magnetic boots hold astronauts to the floor."
+  },
+  {
+   "id": 80,
+   "world": 4,
+   "difficulty": "hard",
+   "mechanic": "device: tilt",
+   "question": "Call Earth.",
+   "screen": "A radio showing 'NO SIGNAL' and a signal bar.",
+   "solution": "Hold the phone up high and tilt it upward until the signal bar is full.",
+   "fallback": "Web: drag the radio's antenna up to its full length.",
+   "hints": [
+    "Where do people go to get better signal?",
+    "Raise your phone towards the sky."
+   ],
+   "why": "Pointing the phone up points the antenna at Earth."
+  },
+  {
+   "id": 81,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "How many stars can you see?",
+   "screen": "Five twinkling star shapes and a big bright Sun in the corner.",
+   "solution": "Type 6.",
+   "hints": [
+    "Something big and bright is easy to forget.",
+    "What kind of object is the Sun?"
+   ],
+   "why": "The Sun is a star too."
+  },
+  {
+   "id": 82,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "rotate",
+   "question": "The alien is sad. Cheer it up.",
+   "screen": "A green alien with a big frown.",
+   "solution": "Rotate the frown 180° to turn it into a smile.",
+   "hints": [
+    "Its face can be moved.",
+    "Turn that frown upside down!"
+   ],
+   "why": "An upside-down frown is a smile."
+  },
+  {
+   "id": 83,
+   "world": 4,
+   "difficulty": "medium",
+   "mechanic": "rotate + drag",
+   "question": "Dock the spaceship with the space station.",
+   "screen": "A ship turned sideways and a docking port.",
+   "solution": "Rotate the ship (two-finger twist or the rotate handle) to line it up, then drag it slowly into the port.",
+   "hints": [
+    "It must face the right way.",
+    "Turn first, then move."
+   ],
+   "why": "Docking needs the right angle and a gentle push."
+  },
+  {
+   "id": 84,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "choose",
+   "question": "Which way is up in space?",
+   "screen": "Buttons: Up / Down / Left / There is no up.",
+   "solution": "Tap 'There is no up'.",
+   "hints": [
+    "What decides 'up' on Earth?",
+    "Gravity."
+   ],
+   "why": "Without gravity pulling you, there's no up or down."
+  },
+  {
+   "id": 85,
+   "world": 4,
+   "difficulty": "hard",
+   "mechanic": "multi-step drag",
+   "question": "Grow a plant on Mars.",
+   "screen": "A seed in red soil, a block of ice, a heater and a grow lamp (off).",
+   "solution": "Drag the ice onto the heater to melt it into water, pour the water on the seed, then tap the grow lamp.",
+   "hints": [
+    "Plants need water and light.",
+    "The ice can become water."
+   ],
+   "why": "Mars has frozen water. Melt it and add light."
+  },
+  {
+   "id": 86,
+   "world": 4,
+   "difficulty": "medium",
+   "mechanic": "swipe rotate",
+   "question": "Wake up the robot.",
+   "screen": "A sleeping robot facing you. Tapping it does nothing.",
+   "solution": "Swipe to spin the robot around. Flip the ON switch on its back.",
+   "hints": [
+    "You only see one side of it.",
+    "Turn it around."
+   ],
+   "why": "The power switch is on the back."
+  },
+  {
+   "id": 87,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "drag",
+   "question": "Fix the broken satellite.",
+   "screen": "A satellite with a missing solar panel piece floating nearby.",
+   "solution": "Drag the floating panel into the gap.",
+   "hints": [
+    "Something is floating away.",
+    "Put it back."
+   ],
+   "why": "The panel completes the satellite."
+  },
+  {
+   "id": 88,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "The alien says 'olleh'. What does it mean?",
+   "screen": "An alien with a speech bubble.",
+   "solution": "Type 'hello'.",
+   "hints": [
+    "Aliens talk differently.",
+    "Read it backwards."
+   ],
+   "why": "'olleh' backwards is 'hello'."
+  },
+  {
+   "id": 89,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "tap",
+   "question": "One of the astronauts is an alien. Find it.",
+   "screen": "A crowd of astronauts in helmets. One has two antennae poking out of its helmet.",
+   "solution": "Tap the astronaut with the antennae.",
+   "hints": [
+    "Look at the helmets.",
+    "Something is sticking out."
+   ],
+   "why": "Antennae give the alien away."
+  },
+  {
+   "id": 90,
+   "world": 4,
+   "difficulty": "hard",
+   "mechanic": "drag",
+   "question": "Escape the black hole!",
+   "screen": "A rocket being pulled towards a swirling black hole. Tapping the engine doesn't help.",
+   "solution": "Drag the black hole itself off the edge of the screen.",
+   "hints": [
+    "The rocket can't win.",
+    "What if you move the danger instead?"
+   ],
+   "why": "In this game, even a black hole can be moved."
+  },
+  {
+   "id": 91,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "type",
+   "question": "The astronaut weighs 60 kg on Earth. What does the scale show on the Moon?",
+   "screen": "An astronaut on a scale on the Moon. A note: 'Moon gravity = 1/6 of Earth'.",
+   "solution": "Type 10.",
+   "hints": [
+    "Use the note.",
+    "60 ÷ 6."
+   ],
+   "why": "The Moon's gravity is about one sixth of Earth's."
+  },
+  {
+   "id": 92,
+   "world": 4,
+   "difficulty": "medium",
+   "mechanic": "rotate tiles",
+   "question": "Power up the space station.",
+   "screen": "A 4×4 grid of wire tiles between a battery and a light.",
+   "solution": "Tap tiles to rotate them until a single wire path connects the battery to the light.",
+   "hints": [
+    "Start from the battery.",
+    "Every tile on the path must connect on both sides."
+   ],
+   "why": "A complete circuit makes the electricity flow."
+  },
+  {
+   "id": 93,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "swipe",
+   "question": "Say hello to the aliens.",
+   "screen": "An astronaut facing a group of aliens.",
+   "solution": "Swipe the astronaut's hand left and right to wave.",
+   "hints": [
+    "How do you greet someone without words?",
+    "Wave!"
+   ],
+   "why": "Waving works everywhere, even in space."
+  },
+  {
+   "id": 94,
+   "world": 4,
+   "difficulty": "medium",
+   "mechanic": "device: dark mode",
+   "question": "Help the crew sleep.",
+   "screen": "A space station cabin, very bright. The crew can't sleep.",
+   "solution": "Turn on dark mode on your phone. The cabin becomes dark.",
+   "fallback": "Web: drag the brightness slider on the cabin wall all the way down.",
+   "hints": [
+    "There's no light switch in the room.",
+    "Check your phone's display settings."
+   ],
+   "why": "The game follows your phone's light and dark setting."
+  },
+  {
+   "id": 95,
+   "world": 4,
+   "difficulty": "hard",
+   "mechanic": "pinch stretch",
+   "question": "Refuel the rocket.",
+   "screen": "A fuel pump and a rocket. The hose is too short to reach.",
+   "solution": "Spread two fingers on the hose to stretch it, then drag the nozzle to the rocket.",
+   "fallback": "Web: drag the end of the hose to stretch it.",
+   "hints": [
+    "The hose is the problem.",
+    "Make it longer with two fingers."
+   ],
+   "why": "In this game the hose is stretchy."
+  },
+  {
+   "id": 96,
+   "world": 4,
+   "difficulty": "easy",
+   "mechanic": "choose",
+   "question": "What colour is the daytime sky on Mars?",
+   "screen": "Buttons: Blue / Orange-brown / Green / Black.",
+   "solution": "Tap Orange-brown.",
+   "hints": [
+    "Mars is the 'red planet'.",
+    "Red dust fills the air."
+   ],
+   "why": "Red dust makes the Mars sky orange-brown. Funnily enough, Mars sunsets look blue!"
+  },
+  {
+   "id": 97,
+   "world": 4,
+   "difficulty": "medium",
+   "mechanic": "swipe",
+   "question": "The Mars rover has stopped. Get it moving.",
+   "screen": "A rover with dusty solar panels and a battery icon at 0%.",
+   "solution": "Swipe across the solar panels to wipe off the dust. The battery charges and the rover drives.",
+   "hints": [
+    "Check the battery.",
+    "The panels can't see the Sun."
+   ],
+   "why": "Dust blocks sunlight from the solar panels."
+  },
+  {
+   "id": 98,
+   "world": 4,
+   "difficulty": "medium",
+   "mechanic": "drag",
+   "question": "Feed the hungry alien.",
+   "screen": "An alien refusing a burger, an apple and a pizza. A glowing lamp in the corner.",
+   "solution": "Drag the lamp to the alien. It eats light.",
+   "hints": [
+    "It doesn't like Earth food.",
+    "What in the room glows?"
+   ],
+   "why": "This alien runs on light, like a plant."
+  },
+  {
+   "id": 99,
+   "world": 4,
+   "difficulty": "hard",
+   "mechanic": "logic switches",
+   "question": "Prepare for landing. Set switches A, B and C.",
+   "screen": "Three switches and rules: 1) Exactly one switch is ON. 2) A is OFF. 3) C is ON only if A is ON.",
+   "solution": "A OFF, B ON, C OFF.",
+   "hints": [
+    "Rule 2 tells you about A right away.",
+    "If A is OFF, rule 3 says C must be OFF."
+   ],
+   "why": "A is OFF, so C is OFF. Only one switch can be ON, so it's B."
+  },
+  {
+   "id": 100,
+   "world": 4,
+   "difficulty": "hard",
+   "mechanic": "multi-step grand finale",
+   "question": "Return to Earth!",
+   "screen": "A spaceship cockpit with a dusty window, a navigation screen and a parachute handle.",
+   "solution": "1) Swipe the window clean to see Earth. 2) The navigation screen asks 'How many holes in a T-shirt?' (from level 21). Type 4. 3) Pull the parachute handle down. The ship lands in the garden of the house from World 1.",
+   "hints": [
+    "Clean the window first.",
+    "Remember the T-shirt from World 1."
+   ],
+   "why": "Grand finale: it brings the story back home and rewards players who remember."
+  }
+ ]
+};

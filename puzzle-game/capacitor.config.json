@@ -1,0 +1,8 @@
+{
+  "appId": "com.eqlsquare.trickmind",
+  "appName": "Trick Mind",
+  "webDir": "app",
+  "android": {
+    "backgroundColor": "#bfe3ff"
+  }
+}

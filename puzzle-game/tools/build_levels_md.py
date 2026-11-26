@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate puzzle-game/levels.json and render it to puzzle-game/LEVELS.md."""
+"""Validate puzzle-game/levels.json, render LEVELS.md, and write app/js/levels-data.js for the game."""
 import json
 from collections import Counter
 from pathlib import Path
@@ -56,4 +56,9 @@ for wid, name in worlds.items():
         out += [f"- **Why:** {lv['why']}", ""]
 
 (ROOT / "LEVELS.md").write_text("\n".join(out), encoding="utf-8")
-print(f"OK: {len(levels)} levels -> LEVELS.md  {dict(diff)}")
+
+# --- game data file (the app loads this instead of fetching JSON) ---
+js = "/* Generated from levels.json by tools/build_levels_md.py. Do not edit. */\n"
+js += "window.LEVEL_DATA = " + json.dumps(data, ensure_ascii=False, indent=1) + ";\n"
+(ROOT / "app" / "js" / "levels-data.js").write_text(js, encoding="utf-8")
+print(f"OK: {len(levels)} levels -> LEVELS.md + app/js/levels-data.js  {dict(diff)}")

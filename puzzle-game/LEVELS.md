@@ -75,11 +75,11 @@ _Generated from `levels.json` by `tools/build_levels_md.py`. Edit the JSON, not 
 ### 8. Tap the odd one out.
 *Easy · tap*
 
-- **On screen:** Four clocks showing 3:00, 6:00, 9:00 and 12:15.
+- **On screen:** Four clocks showing 3:00, 6:00, 9:00 and 12:30.
 - **Nudge hint:** Look at the minute hands.
 - **Strong hint:** Three clocks show an exact hour.
-- **Solution:** Tap the clock showing 12:15.
-- **Why:** Every clock is on the hour except 12:15.
+- **Solution:** Tap the clock showing 12:30.
+- **Why:** Every clock is on the hour except 12:30.
 
 ### 9. The baby is crying. Make it stop.
 *Easy · drag text*
@@ -201,12 +201,12 @@ _Generated from `levels.json` by `tools/build_levels_md.py`. Edit the JSON, not 
 - **Why:** One for the neck, two for the arms, one at the bottom.
 
 ### 22. Fix the clock.
-*Medium · drag hands*
+*Medium · tap to set*
 
-- **On screen:** A wall clock showing the wrong time.
+- **On screen:** A wall clock showing the wrong time, with '+1 hour' and '+5 min' buttons.
 - **Nudge hint:** What time is it right now?
 - **Strong hint:** Check the time on your phone.
-- **Solution:** Drag the clock hands to the real time on your phone (within 5 minutes).
+- **Solution:** Use the buttons to set the clock to the real time on your phone (within 5 minutes).
 - **Why:** A fixed clock shows the real time.
 
 ### 23. Help Mom find her glasses.
@@ -232,8 +232,8 @@ _Generated from `levels.json` by `tools/build_levels_md.py`. Edit the JSON, not 
 
 - **On screen:** A locked front door, a rug, a wall clock and a drawer.
 - **Nudge hint:** Start with something that ticks.
-- **Strong hint:** The note talks about the floor. The key is too big, so make it smaller.
-- **Solution:** 1) Tap the clock. A drawer pops open with a note saying 'Under your feet'. 2) Drag the rug aside to find a giant key. 3) Pinch the key to shrink it. 4) Drag the key to the door.
+- **Strong hint:** The note talks about the floor. The key is too big: pinch it (or double-tap it) to make it smaller.
+- **Solution:** 1) Tap the clock. A drawer pops open with a note saying 'Under your feet'. 2) Drag the rug aside to find a giant key. 3) Pinch or double-tap the key to shrink it. 4) Drag the key to the door.
 - **Why:** World finale: it combines tapping, dragging and pinching.
 
 ## World 2: School Days (levels 26–50)
@@ -394,7 +394,7 @@ _Generated from `levels.json` by `tools/build_levels_md.py`. Edit the JSON, not 
 ### 43. Get exactly 4 litres of water.
 *Medium · tap pour*
 
-- **On screen:** A 3-litre jug, a 5-litre jug and a tap. Tap a jug to fill it. Drag one jug onto the other to pour. Double-tap a jug to empty it.
+- **On screen:** A 3-litre jug and a 5-litre jug, each with Fill and Empty buttons. Drag one jug onto the other to pour.
 - **Nudge hint:** Start by filling the 5-litre jug.
 - **Strong hint:** Try to get 2 litres into the small jug first.
 - **Solution:** Fill the 5. Pour into the 3 (leaves 2). Empty the 3. Pour the 2 into the 3. Fill the 5. Pour into the 3 until full (1 goes in). 4 litres are left in the 5.
@@ -508,7 +508,7 @@ _Generated from `levels.json` by `tools/build_levels_md.py`. Edit the JSON, not 
 - **On screen:** A strange drawing and four suspects. The drawing doesn't look like anyone.
 - **Nudge hint:** The drawing is correct. Maybe it's being held wrong.
 - **Strong hint:** Turn the drawing around.
-- **Solution:** Rotate the drawing 180°. It's an upside-down face with a beard, which matches suspect 3. Tap them.
+- **Solution:** Tap the drawing to turn it the right way up. It's a face with a beard, which matches suspect 3. Tap them.
 - **Why:** The witness handed it over upside down.
 
 ### 56. Find the spare key.
