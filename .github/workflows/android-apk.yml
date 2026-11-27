@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # needed to publish the test APK on the Releases page
 
 concurrency:
   group: android-apk-${{ github.ref }}
@@ -67,12 +67,31 @@ jobs:
         working-directory: puzzle-game/android
         run: ./gradlew assembleDebug --no-daemon -PversionCode="$VERSION_CODE" -PversionName="$VERSION_NAME"
 
+      - name: Name the APK
+        run: |
+          mkdir -p dist
+          cp android/app/build/outputs/apk/debug/app-debug.apk "dist/trick-mind-$VERSION_NAME-debug.apk"
+          ls -la dist
+
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
           name: trick-mind-debug-${{ env.VERSION_NAME }}
-          path: puzzle-game/android/app/build/outputs/apk/debug/*.apk
+          path: puzzle-game/dist/*.apk
           if-no-files-found: error
+
+      # Publish the latest test APK on the repository's Releases page so it can be
+      # downloaded straight from a phone (artifacts are zipped and need a desktop login).
+      - name: Publish test APK to Releases
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete apk-latest --yes --cleanup-tag --repo "$GITHUB_REPOSITORY" || true
+          gh release create apk-latest "dist/trick-mind-$VERSION_NAME-debug.apk" \
+            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease \
+            --title "Trick Mind test build $VERSION_NAME" \
+            --notes "Latest test APK from branch \`$GITHUB_REF_NAME\` (commit ${GITHUB_SHA::7}). Download the .apk on your Android phone and open it to install. Test build: purchases and ads are simulated."
 
       # Signed release build (APK + AAB for Google Play). Runs only when the
       # signing secrets are configured in the repository settings.
